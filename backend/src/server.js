@@ -5,8 +5,8 @@ import cors from 'cors';
 import authRoute from './routes/auth.route.js';
 import messageRoute from './routes/message.route.js';
 import { connectDB } from './lib/db.js';
+import { app, server } from './lib/socket.js';
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
@@ -20,7 +20,7 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authRoute);
 app.use('/api/messages', messageRoute);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
     connectDB();
 });
