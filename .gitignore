@@ -12,7 +12,6 @@ node_modules/
 # Ignore build output folders (common in both front/back ends)
 dist/
 build/
-
 # Ignore logs and database dumps
 *.log
 *.rdb
